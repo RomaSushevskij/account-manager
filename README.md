@@ -36,7 +36,7 @@ Account Manager — это веб-приложение для управлени
 ### 1. Клонирование репозитория
 
 ```sh
-git clone https://github.com/RomaSushevskij/account-manager.git
+git clone git@github.com:RomaSushevskij/account-manager.git
 cd account-manager
 ```
 
