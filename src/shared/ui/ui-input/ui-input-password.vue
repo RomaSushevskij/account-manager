@@ -11,14 +11,14 @@ defineOptions({ name: "UiInputPassword" });
 
 const props = withDefaults(defineProps<Props>(), {
   error: undefined,
-  type: "text",
+  type: "password",
 });
 
-const isVisible = ref(props.type !== "password");
+const isVisible = ref(false);
 
 const inputType = computed<InputTypeHTMLAttribute>(() => {
   if (isVisible.value) {
-    return props.type;
+    return "text";
   }
 
   return "password";

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { UiTypography } from "@/shared/ui/ui-typography";
+import { MainPage } from "@/pages/main-page";
 </script>
 
 <template>
-  <ui-typography variant="h1" as="h1"> App </ui-typography>
+  <main-page />
 </template>
 
 <style scoped></style>

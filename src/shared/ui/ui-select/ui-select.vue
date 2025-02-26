@@ -6,6 +6,7 @@
 import VueSelect, { type Option } from "vue3-select-component";
 
 import type { TProps } from "./types.ts";
+import { UiTypography } from "@/shared/ui/ui-typography";
 
 const props = defineProps<TProps<GenericOption, OptionValue>>();
 
@@ -34,12 +35,17 @@ const slots = defineSlots<{
 </script>
 
 <template>
-  <vue-select v-bind="props" class="custom-select">
-    <template v-for="(_, name) in slots" v-slot:[name]="data" :key="name">
-      <!-- @vue-ignore -->
-      <slot :name="name" v-bind="data" />
-    </template>
-  </vue-select>
+  <label>
+    <ui-typography class="label" v-if="label" variant="body2">
+      {{ label }}
+    </ui-typography>
+    <vue-select v-bind="props" class="custom-select">
+      <template v-for="(_, name) in slots" v-slot:[name]="data" :key="name">
+        <!-- @vue-ignore -->
+        <slot :name="name" v-bind="data" />
+      </template>
+    </vue-select>
+  </label>
 </template>
 
 <style scoped>
@@ -55,5 +61,10 @@ const slots = defineSlots<{
   --vs-option-padding: 0.5rem 1rem;
   --vs-option-selected-background-color: var(--teal-100);
   --vs-indicator-icon-color: var(--teal-700);
+  --vs-background-color: var(--card-bgc);
+}
+
+.label {
+  margin-block-end: var(--xs);
 }
 </style>

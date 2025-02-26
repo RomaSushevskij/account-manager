@@ -31,6 +31,9 @@ const variantClassesMapper: Record<Variant, string> = {
   border-radius: 0.5rem;
   font-size: var(--body2-font-size);
   line-height: var(--body2-line-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .outline {

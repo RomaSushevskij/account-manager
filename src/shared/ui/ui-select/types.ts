@@ -117,4 +117,5 @@ export type TProps<
     onMenuOpened?: () => void;
     onMenuClosed?: () => void;
     onSearch?: (value: string) => void;
+    label?: string;
   };
