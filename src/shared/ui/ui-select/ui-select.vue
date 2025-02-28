@@ -8,6 +8,8 @@ import VueSelect, { type Option } from "vue3-select-component";
 import type { TProps } from "./types.ts";
 import { UiTypography } from "@/shared/ui/ui-typography";
 
+defineOptions({ name: "UiSelect", inheritAttrs: false });
+
 const props = defineProps<TProps<GenericOption, OptionValue>>();
 
 defineEmits<
@@ -35,17 +37,20 @@ const slots = defineSlots<{
 </script>
 
 <template>
-  <label>
-    <ui-typography class="label" v-if="label" variant="body2">
-      {{ label }}
-    </ui-typography>
-    <vue-select v-bind="props" class="custom-select">
+  <div>
+    <label :class="props.class" for="custom-select">
+      <ui-typography class="label" v-if="label" variant="body2">
+        {{ label }}
+      </ui-typography>
+    </label>
+
+    <vue-select v-bind="props" class="custom-select" input-id="custom-select">
       <template v-for="(_, name) in slots" v-slot:[name]="data" :key="name">
         <!-- @vue-ignore -->
         <slot :name="name" v-bind="data" />
       </template>
     </vue-select>
-  </label>
+  </div>
 </template>
 
 <style scoped>

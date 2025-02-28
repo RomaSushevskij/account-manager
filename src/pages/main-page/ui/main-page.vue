@@ -42,7 +42,11 @@ const { accounts } = storeToRefs(accountsStore);
           <edit-account-label :id="account.id" :label="account.label" />
         </template>
         <template #type>
-          <edit-account-type :id="account.id" :type="account.type" />
+          <edit-account-type
+            :id="account.id"
+            :type="account.type"
+            class="type"
+          />
         </template>
         <template #login>
           <edit-account-login :id="account.id" :login="account.login" />
@@ -62,4 +66,8 @@ const { accounts } = storeToRefs(accountsStore);
   </page-layout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.type {
+  margin-block: 1rem;
+}
+</style>

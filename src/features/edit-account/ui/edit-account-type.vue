@@ -33,8 +33,8 @@ const handleUpdateType = (type: Account["type"] | Account["type"][]) => {
     :model-value="type"
     @update:model-value="handleUpdateType"
     :options="accountTypeOptions"
-    close-on-select
     label="Тип записи"
+    close-on-select
   />
 </template>
 
